@@ -19,7 +19,7 @@ Our experiment workflow is as shown in the following diagram (Figure 1).
 <img src="/Analysis/Figure/Updated Experiment Workflow.png">
 <p align="center">Figure 1. Experiment Workflow</p>
 
-### 1 Data prepparation
+### 1. Data prepparation
 We use two datasets from distinct domains: the short video and the book, which are with the contrasting nature of user behavior. The short video platform is characterized by rapid user engagement and high interaction frequencies, where user preferences evolve quickly. For books, users tend to transition between different book genres more gradually. To better investigate the calibration dynamics with the shifts in preference patterns, we preprocess datasets to focus on active users across time windows of different sizes.
 
 The time window selection over user profile is critical when creating users' subprofiles in Figure 1 part (a). In this exploratory work, we are interested in observing changes in calibration when extending the training time window sizes. Given that goal, we look for the smallest window size, leading to sufficient interactions for training and for representing user preferences. Due to differences in user interaction frequency and evolving preferences across domains, time window sizes vary across domains. Users in the book reading domain have less frequent interactions and more stable preferences than users in short video domain. After tuning the time window sizes for the two datasets (for KuaiRec, 1/7/14 days; for GoodReads, 3/6/12 months), we picked 1 day for KuaiRec and 0.5 years (6 months) for GoodReads.
