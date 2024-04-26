@@ -22,7 +22,7 @@ The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all t
 ## Methodology Details
 Our experiment workflow is as shown in the following diagram (Figure 1). 
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/Updated%20Experiment%20Workflow.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/UpdatedExperimentWorkflow.png)
 <p align="center">Figure 1. Experiment Workflow</p>
 
 ### 1 Data preparation
