@@ -22,7 +22,7 @@ The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all t
 ## Methodology Details
 Our experiment workflow is as shown in the following diagram (Figure 1). 
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/UpdatedExperimentWorkflow.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/Updated%20Experiment%20Workflow.png)
 <p align="center">Figure 1. Experiment Workflow</p>
 
 ### 1 Data preparation
@@ -94,47 +94,47 @@ Given that users' varied behavioral patterns in the same dataset may be related 
 ## Key Results (visualization) 
 ### 1. Baysian Personalization Ranking (BPR)
 #### 1.1 Full population 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecFullMiscalibration.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/KuaiRec_FullMiscalibration.png)
 <p align="center">Figure 1a. [KuaiRec BPR] Box plot of miscalibration distribution by time windows</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsFullMiscalibration.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/GoodReadsFullMiscalibration.png)
 <p align="center">Figure 1b. [GoodReads BPR] Box plot of miscalibration distribution by time windows</p>
 
 #### 1.2 Segmented users
 * **Segment by user activity degree (number of overall interactions)**
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecActivity.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/KuaiRecActivity.png)
 <p align="center">Figure 1c. [KuaiRec BPR] Miscalibration by user segments by activity level</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsActivity.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/GoodReadsActivity.png)
 <p align="center">Figure 1d. [GoodReads BPR] Miscalibration by user segments by activity level</p>
 
 * **Segment by user profile entropy (full user profile diversity measured by entropy, higher is more diversified)**
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecProfileEntropy.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/KuaiRecProfileEntropy.png)
 <p align="center">Figure 1e. [KuaiRec BPR] Miscalibration by user segments by profile entropy</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsProfileEntropy.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/BPR/GoodReadsProfileEntropy.png)
 <p align="center">Figure 1f. [GoodReads BPR] Miscalibration by user segments by profile entropy</p>
 
 ### 2. ItemKNN 
 #### 2.1 Full population 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecFullMiscalibrationItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/KuaiRecFullMiscalibrationItemKNN.png)
 <p align="center">Figure 2a. [KuaiRec ItemKNN] Box plot of miscalibration distribution by time windows</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsFullMiscalibrationItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/GoodReadsFullMiscalibrationItemKNN.png)
 <p align="center">Figure 2b. [GoodReads ItemKNN] Box plot of miscalibration distribution by time windows</p>
 
 #### 1.2 Segmented users
 * **Segment by user activity degree (number of overall interactions)**
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecActivityDegreeItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/KuaiRecActivityDegreeItemKNN.png)
 <p align="center">Figure 2c. [KuaiRec ItemKNN] Miscalibration by user segments by activity level</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsActivityDegreeItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/GoodReadsActivityDegreeItemKNN.png)
 <p align="center">Figure 2d. [GoodReads ItemKNN] Miscalibration by user segments by activity level</p>
 
 * **Segment by user profile entropy (full user profile diversity measured by entropy, higher is more diversified)**
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecProfileEntropyItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/KuaiRecProfileEntropyItemKNN.png)
 <p align="center">Figure 2e. [KuaiRec ItemKNN] Miscalibration by user segments by profile entropy</p>
 
-![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsProfileEntropyItemKNN.png)
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibrationUMAP/blob/main/Figure/ItemKNN/GoodReadsProfileEntropyItemKNN.png)
 <p align="center">Figure 2f. [GoodReads ItemKNN] Miscalibration by user segments by profile entropy</p>
 
