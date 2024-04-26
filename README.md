@@ -7,17 +7,14 @@ Code for UMAP24 PAPER -- Beyond Static Calibration: The Impact of User Preferenc
 **Data** 
 * The pre-processed KuaiRec and GoodReads datasets are in the "Data" folder, each in the subfolder named after the dataset. Each dataset folder includes a series of datasets of sub-profiles within designed time windows. 
 
-**Models**
-* All the recommendations are built upon well-tuned Bayesian Personalized Ranking (BPR) and ItemKNN. The tuning and modeling used in this work is based on the implementation of RecBole (https://github.com/RUCAIBox/RecBole). The tuning of key parameters is based on an exhaustive search for the best NDCG@10. The model statistics, including the best selected tuned parameter and accuracy-based measurement (recall@10 and NDCG@10), are available in the "Model" folder. 
-
-**Analysis**
-* Four jupyter notebooks are provided in the folder "Analysis", each for per dataset per algorithm -- KuaiRec_ItemKNN, KuaiRec_BPR, GoodReads_BPR, GoodReads_ItemKNN. 
+**Code**
+* Four jupyter notebooks are provided in the folder "Code" with our analysis code, each for per dataset per algorithm -- KuaiRec_ItemKNN, KuaiRec_BPR, GoodReads_BPR, GoodReads_ItemKNN. 
 
 **Figure**
 * The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all the informative visualizations created during the analysis. 
 
-**Figure**
-The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all the informative visualizations created during the analysis. 
+**Models**
+* All the recommendations are built upon well-tuned Bayesian Personalized Ranking (BPR) and ItemKNN. The tuning and modeling used in this work is based on the implementation of RecBole (https://github.com/RUCAIBox/RecBole). The tuning of key parameters is based on an exhaustive search for the best NDCG@10. The model statistics, including the best selected tuned parameter and accuracy-based measurement (recall@10 and NDCG@10), are available in the "Model" folder. 
 
 ## Methodology Details
 Our experiment workflow is as shown in the following diagram (Figure 1). 
@@ -60,7 +57,7 @@ We tuned the time window size from 3 months to 12 months, and picked 6 months (0
 ### 2. Simulation Process
 We conducted a simulation-based analysis for identifying the most representative segments of users' profiles that, if used for training the recommendation model, would yield more calibrated recommendation results. 
 
-(1) Given user-item interaction matrix containing the profile of all users and their interacted items, we sort each user $u$\'s profile $P_u$ chronologically in descending order and split $P_u$ into $n$ subprofiles as $\{P_u^1, P_u^2, ..., P_u^n\}$ where $P_u^1$ contains the most recent $u$\'s interactions and $P_u^n$ contains the oldest interactions. This process is shown in part (a) of Figure 1. The choice of $n$ (number of subprofiles) is a domain-specific parameter. The time *window size* for creating the subprofiles should be set based on how frequently users interact with items. For example, in a short video streaming platform where users interact with items very frequently, a time window of shorter length, like daily, may be appropriate. However, in a book recommendation platform, a time window of a longer period, such as one or more years, might better capture users' evolving tastes. We discuss and analyze the choice of the time window and $n$ on different recommendation domains in the methodology section.
+(1) Given user-item interaction matrix containing the profile of all users and their interacted items, we sort each user $u$\' s profile $P_u$ chronologically in descending order and split $P_u$ into $n$ subprofiles as $\{P_u^1, P_u^2, ..., P_u^n\}$ where $P_u^1$ contains the most recent $u$\' s interactions and $P_u^n$ contains the oldest interactions. This process is shown in part (a) of Figure 1. The choice of $n$ (number of subprofiles) is a domain-specific parameter. The time *window size* for creating the subprofiles should be set based on how frequently users interact with items. For example, in a short video streaming platform where users interact with items very frequently, a time window of shorter length, like daily, may be appropriate. However, in a book recommendation platform, a time window of a longer period, such as one or more years, might better capture users' evolving tastes. We discuss and analyze the choice of the time window and $n$ on different recommendation domains in the methodology section.
 
 (2) As shown in part (b) of Figure 1, we create samples of the dataset $D$ by iteratively and chronologically combining the subprofiles of users from different time windows as follows:
     $$D^l = \{P_u^1 \cup P_u^2 \cup ... \cup P_u^l | \forall u \in \mathcal{U}\}, \;\;\;\; where \;\; l \leq n$$
