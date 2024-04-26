@@ -11,15 +11,21 @@ Code for UMAP24 PAPER -- Beyond Static Calibration: The Impact of User Preferenc
 * All the recommendations are built upon well-tuned Bayesian Personalized Ranking (BPR) and ItemKNN. The tuning and modeling used in this work is based on the implementation of RecBole (https://github.com/RUCAIBox/RecBole). The tuning of key parameters is based on an exhaustive search for the best NDCG@10. The model statistics, including the best selected tuned parameter and accuracy-based measurement (recall@10 and NDCG@10), are available in the "Model" folder. 
 
 **Analysis**
-* Two jupyter notebooks are provided in the folder "Analysis", one for KuaiRec and one for GoodReads. Meanwhile, all the informative visualizations created during the analysis are in the subfolder "Figures." 
+* Four jupyter notebooks are provided in the folder "Analysis", each for per dataset per algorithm -- KuaiRec_ItemKNN, KuaiRec_BPR, GoodReads_BPR, GoodReads_ItemKNN. 
+
+**Figure**
+* The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all the informative visualizations created during the analysis. 
+
+**Figure**
+The “Figure” folder includes 1/ the experiment workflow diagram and 2/ all the informative visualizations created during the analysis. 
 
 ## Methodology Details
 Our experiment workflow is as shown in the following diagram (Figure 1). 
 
-<img src="/Analysis/Figure/Updated Experiment Workflow.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/UpdatedExperimentWorkflow.png)
 <p align="center">Figure 1. Experiment Workflow</p>
 
-### 1. Data prepparation
+### 1 Data preparation
 We use two datasets from distinct domains: the short video and the book, which are with the contrasting nature of user behavior. The short video platform is characterized by rapid user engagement and high interaction frequencies, where user preferences evolve quickly. For books, users tend to transition between different book genres more gradually. To better investigate the calibration dynamics with the shifts in preference patterns, we preprocess datasets to focus on active users across time windows of different sizes.
 
 The time window selection over user profile is critical when creating users' subprofiles in Figure 1 part (a). In this exploratory work, we are interested in observing changes in calibration when extending the training time window sizes. Given that goal, we look for the smallest window size, leading to sufficient interactions for training and for representing user preferences. Due to differences in user interaction frequency and evolving preferences across domains, time window sizes vary across domains. Users in the book reading domain have less frequent interactions and more stable preferences than users in short video domain. After tuning the time window sizes for the two datasets (for KuaiRec, 1/7/14 days; for GoodReads, 3/6/12 months), we picked 1 day for KuaiRec and 0.5 years (6 months) for GoodReads.
@@ -88,51 +94,47 @@ Given that users' varied behavioral patterns in the same dataset may be related 
 ## Key Results (visualization) 
 ### 1. Baysian Personalization Ranking (BPR)
 #### 1.1 Full population 
-<img src="/Analysis/Figure/BPR/KuaiRec_FullMiscalibration.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecFullMiscalibration.png)
 <p align="center">Figure 1a. [KuaiRec BPR] Box plot of miscalibration distribution by time windows</p>
 
-<img src="/Analysis/Figure/BPR/GoodReads_FullMiscalibration.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsFullMiscalibration.png)
 <p align="center">Figure 1b. [GoodReads BPR] Box plot of miscalibration distribution by time windows</p>
 
 #### 1.2 Segmented users
 * **Segment by user activity degree (number of overall interactions)**
-
-<img src="/Analysis/Figure/BPR/KuaiRec_Activity.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecActivity.png)
 <p align="center">Figure 1c. [KuaiRec BPR] Miscalibration by user segments by activity level</p>
 
-<img src="/Analysis/Figure/BPR/GoodReads_Activity.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsActivity.png)
 <p align="center">Figure 1d. [GoodReads BPR] Miscalibration by user segments by activity level</p>
 
 * **Segment by user profile entropy (full user profile diversity measured by entropy, higher is more diversified)**
-
-<img src="/Analysis/Figure/BPR/KuaiRec_ProfileEntropy.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/KuaiRecProfileEntropy.png)
 <p align="center">Figure 1e. [KuaiRec BPR] Miscalibration by user segments by profile entropy</p>
 
-<img src="/Analysis/Figure/BPR/GoodReads_ProfileEntropy.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/BPR/GoodReadsProfileEntropy.png)
 <p align="center">Figure 1f. [GoodReads BPR] Miscalibration by user segments by profile entropy</p>
 
 ### 2. ItemKNN 
 #### 2.1 Full population 
-<img src="/Analysis/Figure/ItemKNN/KuaiRec_FullMiscalibrationItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecFullMiscalibrationItemKNN.png)
 <p align="center">Figure 2a. [KuaiRec ItemKNN] Box plot of miscalibration distribution by time windows</p>
 
-<img src="/Analysis/Figure/ItemKNN/GoodReads_FullMiscalibrationItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsFullMiscalibrationItemKNN.png)
 <p align="center">Figure 2b. [GoodReads ItemKNN] Box plot of miscalibration distribution by time windows</p>
 
 #### 1.2 Segmented users
 * **Segment by user activity degree (number of overall interactions)**
-
-<img src="/Analysis/Figure/ItemKNN/KuaiRec_ActivityDegreeItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecActivityDegreeItemKNN.png)
 <p align="center">Figure 2c. [KuaiRec ItemKNN] Miscalibration by user segments by activity level</p>
 
-<img src="/Analysis/Figure/ItemKNN/GoodReads_ActivityDegreeItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsActivityDegreeItemKNN.png)
 <p align="center">Figure 2d. [GoodReads ItemKNN] Miscalibration by user segments by activity level</p>
 
 * **Segment by user profile entropy (full user profile diversity measured by entropy, higher is more diversified)**
-
-<img src="/Analysis/Figure/ItemKNN/KuaiRec_ProfileEntropyItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/KuaiRecProfileEntropyItemKNN.png)
 <p align="center">Figure 2e. [KuaiRec ItemKNN] Miscalibration by user segments by profile entropy</p>
 
-<img src="/Analysis/Figure/ItemKNN/GoodReads_ProfileEntropyItemKNN.png">
+![<p align="center">Figure 1. Experiment Workflow</p>](https://github.com/nicolelin13/DynamicCalibration-BIAS24/blob/main/Figure/ItemKNN/GoodReadsProfileEntropyItemKNN.png)
 <p align="center">Figure 2f. [GoodReads ItemKNN] Miscalibration by user segments by profile entropy</p>
 
